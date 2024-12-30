@@ -2,13 +2,17 @@
 ## Requirements:
 - Nerd font
 
-## JetBrainsMono Nerd Font:
+### JetBrainsMono Nerd Font:
 1. Install from https://www.nerdfonts.com/font-downloads
 2. Move to `~/.fonts/`
 3. Unzip the zip
 4. Run the command `fc-cache -fv` to manually rebuild the font cash
-5. asdfasdf
 **Reference:** [github.com](https://gist.github.com/matthewjberger/7dd7e079f282f8138a9dc3b045ebefa0)
+
+### Operator Caska Nerd Font:
+1. Use [github.com](https://github.com/Anant-mishra1729/Operator-caska-Font) to install.
+2. After the fonts are moved into `~/.fonts/`, run the bash command `fc-cache -fv` to rebuilt the font cache.
+3. Ensure that the `font-family` is set to `family=Operator-caska postscript_name=CaskaydiaCoveNF-Regular` in kitty.conf.
 
 ## Installation:
 - Load nvim submodule
@@ -38,20 +42,16 @@ sudo apt install curl
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-- Install nvim
+### Necessary programs:
+- neovim
+- hyprshot
+- hyprpaper
+- kitty
+- mako
+- wofi
+- waybar
+
+#### Install in one command
 ```bash
-brew install neovim
+sudo pacman -S neovim hyprshot hyprpaper kitty mako waybar wofi
 ```
-
-## Changes to dotfiles:
-### starship.toml:
-```toml
-[░▒▓](#a3aed2)\
-```
-This was removed.
-
-```toml
-[  ](bg:#a3aed2 fg:#090c0c)\
-```
-
-Apple logo replaced with Ubuntu logo.

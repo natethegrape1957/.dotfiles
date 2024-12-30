@@ -1,0 +1,28 @@
+on-button-middle=dismiss-all
+background-color=#000000CC
+text-color=#FFFFFF
+border-color=#A47EE8DD
+width=350
+height=200
+border-radius=4
+icon-path=~/.config/mako/icons
+default-timeout=15000
+
+[urgency=normal]
+default-timeout=30000
+
+[urgency=critical]
+default-timeout=90000
+text-color=#FF746CDD
+
+[urgency=low summary~=(Volume)]
+text-color=#A7BDE6
+background-color=#333333DD
+default-timeout=2000
+
+[summary~=(Battery)]
+text-color=#A0E2B4
+
+# Other good fitting colors:
+# text-color=#A7BDE6 # Blue
+# text-color=#2A3B6D # Navy blue

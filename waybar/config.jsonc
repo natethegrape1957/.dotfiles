@@ -1,0 +1,161 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces"
+        //"custom/media"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        //"mpd",
+        "pulseaudio",
+        "network",
+        "power-profiles-daemon",
+        //"sway/language",
+        "battery",
+        "clock"
+        //"custom/power"
+    ],
+
+// Modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "format": "{name}: {icon}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
+            //"1": "",
+            //"2": "",
+            //"3": "",
+            //"4": "",
+            //"5": "",
+        }
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "󰈹  $1",
+            "(.*)~": " $1",
+            "nvim (.*)": " -> $1",
+            "nvim": " ",
+            "vim (.*)": " $1",
+            "(.*) - fish": "> [$1]"
+        },
+        "separate-outputs": true
+    },
+    "clock": {
+        "format": "{:%H:%M} 󰥔 ",
+        "format-alt": "{:%a., %b. %d, %Y (%R 󰥔 )}",
+        "tooltip-format": "<span color='#ff746c'><big><b>{:%Y %B}</b></big></span>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 4,
+            "format": {
+                // "months": "<span color='#a0e2b4'><b>{}</b></span>",
+                "months": "<span color='#ffffff'><b>{}</b></span>",
+                // "weekdays": "<span color='#e8a47e'><b>{}</b></span>",
+                "weekdays": "<span color='#abb2bf'><b>{}</b></span>",
+                "days": "<span color='#abb2bf'>{}</span>",
+                "today": "<span color='#a0e2b4'><b><u>{}</u></b></span>"
+            }
+        },
+        "timezones": [
+            "Asia/Seoul",
+            "America/Los_Angeles",
+            "Etc/UTC"
+        ]
+        //"smooth-scrolling-threshold": 10,
+        //"actions": {
+          //"on-scroll-up": "tz_up",
+          //"on-scroll-down": "tz_down"
+        //}
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+      }
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": " Str: {signalStrength}%",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
+//  "custom/power": {
+//      "format" : "⏻ ",
+//      "tooltip": false,
+//      "menu": "on-click",
+//      "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+//      "menu-actions": {
+//          "shutdown": "shutdown",
+//          "reboot": "reboot",
+//          "suspend": "systemctl suspend",
+//          "hibernate": "systemctl hibernate"
+//      }
+//  }
+}

@@ -20,6 +20,10 @@ text-color=#A7BDE6
 background-color=#333333DD
 default-timeout=2000
 
+[urgency=low summary~=(Microphone)]
+text-color=#A7BDE6
+background-color=#333333DD
+default-timeout=2000
 [summary~=(Battery)]
 text-color=#A0E2B4
 

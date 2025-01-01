@@ -146,6 +146,7 @@ button:hover {
 
 tooltip {
 background: rgba(40, 45, 52, 0.9);
+border: 1.5px solid rgba(256, 256, 256, 0.8);
 }
 
 #battery {

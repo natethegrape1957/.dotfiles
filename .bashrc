@@ -116,9 +116,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Starts starship
 eval "$(starship init bash)"
 
 # Created by `pipx` on 2024-07-25 23:44:15
 export PATH="$PATH:/home/natethegrape1957/.local/bin"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+if uwsm check may-start && uwsm select; then
+	exec systemd-cat -t uwsm_start uwsm start default
+fi

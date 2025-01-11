@@ -50,8 +50,9 @@ sudo apt install curl
 - mako
 - wofi
 - waybar
+- nautilus
 
 #### Install in one command
 ```bash
-sudo pacman -S neovim hyprshot hyprpaper kitty mako waybar wofi
+sudo pacman -S neovim hyprshot hyprpaper kitty mako waybar wofi nautilus
 ```

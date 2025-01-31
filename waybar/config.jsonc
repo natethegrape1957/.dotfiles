@@ -45,10 +45,10 @@
         "format": "{title}",
         "rewrite": {
             "(.*) — Mozilla Firefox": "󰈹  $1",
-            "(.*)~": " $1",
-            "nvim (.*)": " -> $1",
+            "(.*)~": "  $1",
+            "nvim (.*)": "  -> $1",
             "nvim": " ",
-            "vim (.*)": " $1",
+            "vim (.*)": "  $1",
             "(.*) - fish": "> [$1]"
         },
         "separate-outputs": true
@@ -108,7 +108,7 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": " Str: {signalStrength}%",
+        "format-wifi": "  Str: {signalStrength}%",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
